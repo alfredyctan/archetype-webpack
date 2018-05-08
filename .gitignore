@@ -17,15 +17,15 @@
 
 # eclipse
 */bin/
-*/.classpath
-*/.project
-*/.settings/
-*/.factorypath
-*/.springBeans
-*/.mvn
+**/.classpath
+**/.project
+**/.settings/
+**/.factorypath
+**/.springBeans
+**/.mvn
 
 # maven
-*/target/
+**/target/
 
 # intellij
 */*.iml
@@ -49,3 +49,4 @@
 **/.lock-wscript
 **/.tern-project
 **/package-lock.json
+/target/
