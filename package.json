@@ -1,0 +1,15 @@
+{
+  "license": "(GPL-3.0)",
+  "name": "maven-webpack-starter",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rimraf target/classes/public",
+    "copy": "copyfiles -f src/main/javascript/favicon.ico  target/classes/public",
+    "dist": "npm run clean & npm run copy"
+  },
+  "author": "Alfred Tan",
+  "devDependencies": {
+    "copyfiles": "^0.2.1",
+    "rimraf": "^2.4.3"
+  }
+}

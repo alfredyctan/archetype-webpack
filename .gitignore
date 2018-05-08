@@ -16,6 +16,7 @@
 */gradlew.bat
 
 # eclipse
+/bin/
 */bin/
 **/.classpath
 **/.project
@@ -32,6 +33,15 @@
 */.idea/
 
 # npm,yarn,webpack
+/node/
+/node_modules/
+/jspm_packages/
+/bower_components/
+/dist/
+/build/
+/pids/
+/lib-cov/
+/coverage/
 */node/
 */node_modules/
 */jspm_packages/
