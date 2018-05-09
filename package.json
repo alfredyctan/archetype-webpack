@@ -5,11 +5,38 @@
   "scripts": {
     "clean": "rimraf target/classes/public",
     "copy": "copyfiles -f src/main/javascript/favicon.ico  target/classes/public",
-    "dist": "npm run clean & npm run copy"
+    "dist": "npm run clean & npm run copy",
+    "start:local": "node src/main/node/index.js --mode=dev --env=local"
   },
   "author": "Alfred Tan",
   "devDependencies": {
+    "babel-core": "^6.0.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.0.15",
+    "babel-register": "^6.26.0",
     "copyfiles": "^0.2.1",
-    "rimraf": "^2.4.3"
+    "eslint": "^4.19.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-react": "^7.1.0",
+    "express": "^4.15.4",
+    "file-loader": "^1.1.11",
+    "minimist": "^1.2.0",
+    "path": "^0.12.7",
+    "react-hot-loader": "^4.0.0",
+    "rimraf": "^2.4.3",
+    "serve-favicon": "^2.4.5",
+    "url-loader": "^0.5.6",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-middleware": "^3.0.1",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-hot-middleware": "^2.21.2"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }
