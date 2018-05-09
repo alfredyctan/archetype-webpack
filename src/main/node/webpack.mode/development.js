@@ -36,8 +36,7 @@ let config = Object.assign({}, baseConfig, {
       VERSION: JSON.stringify(require(path.resolve(settings.basePath, 'package.json')).version)
     })
   ],
-  module: settings.defaultModules,
-  name: settings.contextPath
+  module: settings.defaultModules
 });
 
 // Add needed loaders to the defaults here

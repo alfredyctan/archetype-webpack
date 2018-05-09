@@ -1,5 +1,4 @@
 'use strict';
-let path = require('path');
 let settings = require('./settings');
 
 module.exports = {
@@ -14,5 +13,6 @@ module.exports = {
       'src/modules'
     ]
   },
-  module: {}
+  module: {},
+  name: settings.contextPath
 };
