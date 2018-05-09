@@ -6,7 +6,7 @@
     "clean": "rimraf target/classes/public",
     "copy": "copyfiles -f src/main/javascript/favicon.ico  target/classes/public",
     "dist": "npm run clean & npm run copy & webpack --config src/main/node/webpack.config.js --mode=production & babel src/main/config/ui -d target/classes/ui --copy-files",
-    "start:local": "node src/main/node/index.js --mode=dev --env=local"
+    "start:local": "node src/main/node/index.js --mode=development --env=local"
   },
   "author": "Alfred Tan",
   "devDependencies": {

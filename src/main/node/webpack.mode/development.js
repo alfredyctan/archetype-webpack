@@ -4,6 +4,7 @@ let path = require('path');
 let webpack = require('webpack');
 let baseConfig = require('./base');
 let settings = require('./settings');
+let project = require('../project');
 
 //the entry start from ${baseDir}
 let config = Object.assign({}, baseConfig, {
@@ -15,16 +16,16 @@ let config = Object.assign({}, baseConfig, {
   cache: true,
   devtool: 'eval-source-map',
   output: {
-    path: path.join(settings.basePath, 'target/classes/public/static'),
+    path: path.join(project.basePath, 'target/classes/public/static'),
     filename: 'bundle.js',
-    publicPath: `${settings.contextPath}/static/`
+    publicPath: `${project.contextPath}/static/`
   },
   devServer: {
-    contentBase: settings.srcPath,
+    contentBase: project.srcPath,
     historyApiFallback: true,
     hot: true,
     port: 80,
-    publicPath: `${settings.contextPath}/static/`,
+    publicPath: `${project.contextPath}/static/`,
     noInfo: false
   },
   plugins: [
@@ -33,7 +34,7 @@ let config = Object.assign({}, baseConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
-      VERSION: JSON.stringify(require(path.resolve(settings.basePath, 'package.json')).version)
+      VERSION: JSON.stringify(require(path.resolve(project.basePath, 'package.json')).version)
     })
   ],
   module: settings.defaultModules
@@ -49,7 +50,7 @@ config.module.rules.push({
       plugins: ['react-hot-loader/babel']
     },
   },
-  include: settings.srcPath
+  include: project.srcPath
 });
 
 module.exports = config;

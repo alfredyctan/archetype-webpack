@@ -1,12 +1,12 @@
 'use strict';
-let settings = require('./settings');
+let project = require('../project');
 
 module.exports = {
   devtool: 'eval',
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      components: `${settings.srcPath}/components/`
+      components: `${project.srcPath}/components/`
     },
     modules: [
       'node_modules',
@@ -14,5 +14,5 @@ module.exports = {
     ]
   },
   module: {},
-  name: settings.contextPath
+  name: project.contextPath
 };

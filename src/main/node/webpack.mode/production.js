@@ -4,20 +4,21 @@ let path = require('path');
 let webpack = require('webpack');
 let baseConfig = require('./base');
 let settings = require('./settings');
+let project = require('../project');
 
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 let config = Object.assign({}, baseConfig, {
-  entry: path.join(settings.srcPath, 'index'),
+  entry: path.join(project.srcPath, 'index'),
   mode: 'production',
   cache: false,
   devtool: 'cheap-module-source-map',
   output: {
-    path: path.join(settings.basePath, 'target/classes/public/static'),
+    path: path.join(project.basePath, 'target/classes/public/static'),
     filename: '[name].[chunkhash].js',
-    publicPath: `${settings.contextPath}/static/`
+    publicPath: `${project.contextPath}/static/`
   },
   optimization: {
     minimize: true,
@@ -57,10 +58,10 @@ let config = Object.assign({}, baseConfig, {
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
-      VERSION: JSON.stringify(require(path.resolve(settings.basePath, 'package.json')).version)
+      VERSION: JSON.stringify(require(path.resolve(project.basePath, 'package.json')).version)
     }),
     new HtmlWebPackPlugin({
-      template: path.resolve(settings.srcPath, 'index.ejs'),
+      template: path.resolve(project.srcPath, 'index.ejs'),
       filename: '../index.html',
       minify: {
         collapseWhitespace: true,
@@ -93,7 +94,7 @@ config.module.rules.push({
       babelrc: true
     },
   },
-  include: settings.srcPath
+  include: project.srcPath
 });
 
 module.exports = config;
