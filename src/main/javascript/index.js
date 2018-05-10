@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Welcome from './components/Welcome';
-import Button from './components/Button';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import App from './components/App'
+import rootReducer from './reducers'
 
-var welcome = new Welcome();
-welcome.hello();
+const store = createStore(rootReducer)
 
 // bootstrap of the whoel app
 ReactDOM.render(
-  <Button name='try me'/>,
-  document.getElementById('button')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
 );
 

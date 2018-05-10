@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" />
-	<title>Hello World</title>
+  <script type="text/javascript">
+    document.write("<base href='" + window.location.href />");
+  </script>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
 </head>
+
 <body>
-	<div id="button"></div>
-    <script type="text/javascript" src="config/base.js"></script>
-    <script type="text/javascript" src="config/env.js"></script>
-    <%if (process.env.NODE_ENV != 'production') { %>
-      <script>__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
-      <script type="text/javascript" src="/context/static/bundle.js"></script>
-    <% } %>
+  <div id="app"></div>
+  <script type="text/javascript" src="config/base.js"></script>
+  <script type="text/javascript" src="config/env.js"></script>
+  <%if (process.env.NODE_ENV != 'production') { %>
+    <script>
+      __REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__
+    </script>
+    <script type="text/javascript" src="static/bundle.js"></script>
+  <% } %>
 </body>
 </html>
