@@ -17,6 +17,7 @@
     "babel-polyfill": "^6.3.14",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "compression-webpack-plugin": "^1.1.11",
     "copyfiles": "^0.2.1",
@@ -40,7 +41,10 @@
     "webpack-hot-middleware": "^2.21.2"
   },
   "dependencies": {
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.5.2"
   }
 }
